@@ -1,5 +1,20 @@
+/* Fonts */
+@font-face {
+  font-family: "DMSans-Medium";
+  src: url(/GameOn/starterOnly/DM_Sans/DMSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: "DMSans-Regular";
+  src: url(/GameOn/starterOnly/DM_Sans/DMSans-Regular.ttf);
+}
+
 :root {
-  --font-default: "DM Sans", Arial, Helvetica, sans-serif;
+  --red-highlight: #fe142f;
+  --light: #fff;
+  --dark-light: #232323;
+  --dark: #000;
+  --font-default: "DMSans-Medium", sans-serif;
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
 }
@@ -49,7 +64,7 @@ img {
   margin: 5px;
   text-decoration: none;
   font-size: 20px;
-  font-family: Roboto, sans-serif;
+  font-family: "DMSans-Medium", sans-serif;
 }
 
 .topnav a:hover {
@@ -69,6 +84,7 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .header-logo img {width:11rem;}
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -93,12 +109,18 @@ img {
 
 
  @media screen and (max-width: 540px) {
+  
+  .header-logo img {width:11rem;}
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
-  }
+    margin-top: -15px;}
+  .hero-content {padding: 0 !important;min-width:100% !important;}  
+  .hero-headline{font-size: 1.9rem !important;}
+  .hero-text{font-size: 1rem !important;margin-top:20px !important;}
+  .copyrights {padding: 0 !important;margin: 0 !important;font-size: 8px !important;}
+
 } 
 
 main {
@@ -138,6 +160,47 @@ main {
 }
 
 /* Modal form */
+
+.modal_success {
+  display: none;    
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+
+.modal_content{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    max-width: 600px;
+  width: 95%;
+  border-radius: 10px;
+  background: var(--dark-light);
+  color: var(--light);
+  animation: modalopen .4s ease-in-out;
+}
+
+.btn {
+  min-width: 17rem;
+  width: 50%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px 0;
+  font-size: clamp(1.8rem, 2.2vw, 2rem);
+  color: var(--light);
+  background: var(--red-highlight);
+  font-family: "DMSans-Medium", sans-serif;
+}
 
 .button {
   background: #fe142f;
@@ -405,7 +468,7 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -436,7 +499,7 @@ input[data-error]::after {
   z-index: 1;
 }
 .hero-headline {
-  font-size: 6rem;
+  font-size: 5.6rem;
   font-weight: normal;
   white-space: nowrap;
 }
@@ -495,7 +558,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    
     white-space: normal;
   }
   .hero-text {
